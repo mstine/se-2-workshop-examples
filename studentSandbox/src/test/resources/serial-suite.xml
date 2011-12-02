@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Serial Suite for Se Grid">
+    <test name="Serial Test for Se Grid">
+        <packages>
+            <package name="com.dss.se2workshop.grid"/>
+        </packages>
+    </test>
+</suite>

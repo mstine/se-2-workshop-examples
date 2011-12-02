@@ -1,0 +1,30 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.6
+
+repositories {
+	mavenCentral()
+	/*maven {
+		url "http://content1.local:8081/nexus/content/groups/public/"
+	}*/
+}
+
+dependencies {
+	testCompile "org.seleniumhq.selenium:selenium-java:2.13.0",
+				"junit:junit:4.10",
+                "org.testng:testng:5.14.1"
+}
+
+task seGridParallel(type: Test) {
+	useTestNG() {
+		suites 'src/test/resources/parallel-suite.xml'
+	}
+}
+
+task seGridSerial(type: Test) {
+	useTestNG() {
+		suites 'src/test/resources/serial-suite.xml'
+	}
+}
