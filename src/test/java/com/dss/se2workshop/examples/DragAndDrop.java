@@ -17,7 +17,7 @@ public class DragAndDrop {
 		WebElement element = driver.findElement(By.id("draggable_demo"));
 		WebElement target = driver.findElement(By.id("droppable_demo"));
 		
-		for (int i = 0; i < 5; i ++) {
+		for (int i = 0; i < 2; i ++) {
 			(new Actions(driver)).dragAndDrop(element, target).perform();
 			Thread.sleep(5000);
 		}

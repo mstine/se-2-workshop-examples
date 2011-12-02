@@ -1,10 +1,12 @@
 apply plugin: 'java'
 
 repositories {
-	mavenCentral()
+	maven {
+	        url "http://content1.local:8081/nexus/content/groups/public/"
+	    }
 }
 
 dependencies {
-	testCompile "org.seleniumhq.selenium:selenium-java:2.9.0",
+	testCompile "org.seleniumhq.selenium:selenium-java:2.13.0",
 							"junit:junit:4.10"
 }
