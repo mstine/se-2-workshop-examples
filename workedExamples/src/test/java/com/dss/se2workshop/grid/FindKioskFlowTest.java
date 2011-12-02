@@ -1,6 +1,7 @@
 package com.dss.se2workshop.grid;
 
 import com.dss.se2workshop.pop.pages.*;
+import com.dss.se2workshop.util.PropertyLoader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -22,7 +23,7 @@ public class FindKioskFlowTest {
 
     @Test
     public void testFindKioskFlow() throws Exception {
-        HomePage homePage = new HomePage(driver, "http://localhost:8080").get();
+        HomePage homePage = new HomePage(driver, PropertyLoader.getBaseUrl()).get();
         FindAFluffboxPage findAFluffboxPage = homePage.findAFluffbox();
 
         findAFluffboxPage.searchForKiosksIn("Ft. Lauderdale");

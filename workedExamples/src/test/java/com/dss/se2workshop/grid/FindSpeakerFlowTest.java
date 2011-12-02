@@ -1,6 +1,7 @@
 package com.dss.se2workshop.grid;
 
 import com.dss.se2workshop.pop.pages.*;
+import com.dss.se2workshop.util.PropertyLoader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -23,7 +24,7 @@ public class FindSpeakerFlowTest {
 
     @Test
     public void testFindSpeakerFlow() throws Exception {
-        HomePage homePage = new HomePage(driver, "http://localhost:8080").get();
+        HomePage homePage = new HomePage(driver, PropertyLoader.getBaseUrl()).get();
         FindASpeakerPage findASpeakerPage = homePage.findASpeaker();
         SpeakerDetailsPage speakerDetailsPage = findASpeakerPage.showSpeakerDetails("Matt Stine");
         FindKioskBySpeakerPage findKioskBySpeakerPage = speakerDetailsPage.findThisSpeaker();

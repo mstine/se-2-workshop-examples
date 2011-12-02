@@ -1,6 +1,7 @@
 package com.dss.se2workshop.pop;
 
 import com.dss.se2workshop.pop.pages.*;
+import com.dss.se2workshop.util.PropertyLoader;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +20,7 @@ public class FindSpeakerFlowTest {
 
     @Test
     public void testFindSpeakerFlow() throws Exception {
-        HomePage homePage = new HomePage(driver, "http://localhost:8080").get();
+        HomePage homePage = new HomePage(driver, PropertyLoader.getBaseUrl()).get();
         FindASpeakerPage findASpeakerPage = homePage.findASpeaker();
         SpeakerDetailsPage speakerDetailsPage = findASpeakerPage.showSpeakerDetails("Matt Stine");
         FindKioskBySpeakerPage findKioskBySpeakerPage = speakerDetailsPage.findThisSpeaker();

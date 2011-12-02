@@ -2,6 +2,8 @@ package com.dss.se2workshop.fluffbox;
 
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
+
+import com.dss.se2workshop.util.PropertyLoader;
 import org.junit.*;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
@@ -11,7 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class FindSpeakerFlowTest {
 	private WebDriver driver;
-	private String baseUrl="http://localhost:8080";
+	private String baseUrl= PropertyLoader.getBaseUrl();
 	private StringBuffer verificationErrors = new StringBuffer();
 	@Before
 	public void setUp() throws Exception {
