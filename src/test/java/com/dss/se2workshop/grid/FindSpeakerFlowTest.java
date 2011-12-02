@@ -1,20 +1,24 @@
-package com.dss.se2workshop.pop;
+package com.dss.se2workshop.grid;
 
 import com.dss.se2workshop.pop.pages.*;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class FindSpeakerFlowTest {
     private WebDriver driver;
 
-    @Before
+    @BeforeClass
     public void setUp() throws Exception {
-        driver = new FirefoxDriver();
+        DesiredCapabilities capability = DesiredCapabilities.firefox();
+        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
     }
 
     @Test
@@ -28,7 +32,7 @@ public class FindSpeakerFlowTest {
         loginPage.login("joeuser", "password").at();
     }
 
-    @After
+    @AfterClass
     public void tearDown() throws Exception {
         driver.quit();
     }
