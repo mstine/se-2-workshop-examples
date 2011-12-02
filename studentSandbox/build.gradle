@@ -5,10 +5,9 @@ apply plugin: 'eclipse'
 sourceCompatibility = 1.6
 
 repositories {
-	mavenCentral()
-	/*maven {
+	maven {
 		url "http://content1.local:8081/nexus/content/groups/public/"
-	}*/
+	}
 }
 
 dependencies {
