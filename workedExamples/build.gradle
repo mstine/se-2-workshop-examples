@@ -28,3 +28,7 @@ task seGridSerial(type: Test) {
 		suites 'src/test/resources/serial-suite.xml'
 	}
 }
+
+test {
+    maxParallelForks = 2
+}
